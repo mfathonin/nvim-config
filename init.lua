@@ -19,6 +19,9 @@ vim.opt.rtp:prepend(lazypath)
 -- Configure plugin
 require('lazy').setup({
   { "folke/which-key.nvim", opts = {} },
+
+  -- "gc" to comment visual region/lines
+  { 'numToStr/Comment.nvim', opts = {} },
 })
 
 -- Importing all plugins setup

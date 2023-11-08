@@ -1,15 +1,19 @@
-vim.keymap.set("n", "<leader>ft", vim.cmd.Ex)
+vim.keymap.set("n", "<C-b>", vim.cmd.Ex)
 
--- Disabled highlight on search
-vim.o.hlsearch = false
+-- Move selected line
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
--- Realative line numbers
-vim.wo.number = true
-vim.wo.relativenumber = true
+-- Refine "J" on normal mode
+vim.keymap.set("n", "J", "mzJ`z")
 
--- Enable mouse mode
-vim.o.mouse = "a"
+-- Scroll stay in center
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
--- Save undo history
-vim.o.undofile = true
+-- Search stay in the middle
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
 
+-- To normal mode
+vim.keymap.set("i", "jj", "<Esc>")
