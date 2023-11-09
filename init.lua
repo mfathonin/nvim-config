@@ -22,6 +22,13 @@ require('lazy').setup({
 
   -- "gc" to comment visual region/lines
   { 'numToStr/Comment.nvim', opts = {} },
+
+  -- Add telescope.nvim 
+  {
+    'nvim-telescope/telescope.nvim', tag = '0.1.4',
+    -- or                          , branch = '0.1.x',
+    dependencies = { 'nvim-lua/plenary.nvim' }
+  },
 })
 
 -- Importing all plugins setup
