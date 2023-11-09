@@ -18,8 +18,6 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Configure plugin
 require('lazy').setup({
-  { "folke/which-key.nvim", opts = {} },
-
   -- "gc" to comment visual region/lines
   { 'numToStr/Comment.nvim', opts = {} },
 
@@ -28,6 +26,13 @@ require('lazy').setup({
     'nvim-telescope/telescope.nvim', tag = '0.1.4',
     -- or                          , branch = '0.1.x',
     dependencies = { 'nvim-lua/plenary.nvim' }
+  },
+  { 
+    "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter-textobjects',
+    },
+    build = ":TSUpdate"
   },
 })
 

@@ -17,3 +17,17 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 -- To normal mode
 vim.keymap.set("i", "jj", "<Esc>")
+
+-- [[ Telescope key binding ]]
+local builtin = require('telescope.builtin')
+
+vim.keymap.set('n', '<C-p>', builtin.git_files)
+vim.keymap.set('n', '<leader>gf', builtin.git_files)
+vim.keymap.set('n', '<leader>wf', builtin.find_files, {
+  desc = "[W]orkspace [F]ile"
+})
+vim.keymap.set('n', '<leader>ws', function()
+  builtin.grep_string({ search = vim.fn.input('Grep > ') });
+end, {
+  desc = '[W]orkspace [S]earch'
+})
