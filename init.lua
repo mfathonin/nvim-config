@@ -48,6 +48,9 @@ require('lazy').setup({
     build = ":TSUpdate"
   },
 
+  -- Git tools
+  { 'tpope/vim-fugitive' },
+
   -- Theme
   { "rebelot/kanagawa.nvim" },
 })
