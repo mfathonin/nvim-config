@@ -44,6 +44,9 @@ require('kanagawa').setup({
         TelescopeResultsBorder = { fg = theme.ui.bg_m1, bg = theme.ui.bg_m1 },
         TelescopePreviewNormal = { bg = theme.ui.bg_dim },
         TelescopePreviewBorder = { bg = theme.ui.bg_dim, fg = theme.ui.bg_dim },
+
+        WhichKeyFloat = { bg = palette.sumiInk0 },
+        WhichKeyBorder = { fg = palette.oldWhite },
       }
     end,
     theme = "wave",              -- Load "wave" theme when 'background' option is not set

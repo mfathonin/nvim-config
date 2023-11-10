@@ -5,5 +5,6 @@
   "nvim-treesitter": { "branch": "master", "commit": "8996612bfbebe1657e1bb55a95201c96cab945c6" },
   "nvim-treesitter-textobjects": { "branch": "master", "commit": "e1e670a86274d5cb681e475d4891ea1afe605ced" },
   "plenary.nvim": { "branch": "master", "commit": "50012918b2fc8357b87cff2a7f7f0446e47da174" },
-  "telescope.nvim": { "branch": "master", "commit": "7011eaae0ac1afe036e30c95cf80200b8dc3f21a" }
+  "telescope.nvim": { "branch": "master", "commit": "7011eaae0ac1afe036e30c95cf80200b8dc3f21a" },
+  "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" }
 }

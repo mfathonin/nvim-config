@@ -18,6 +18,19 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Configure plugin
 require('lazy').setup({
+  -- Which-key plugin
+  { 
+    'folke/which-key.nvim', 
+    opts = {
+      window = {
+        border = "single",
+        winblend = 13,
+        margin = { 0, 0, 0, 0 }, 
+        padding = { 1, 0, 1, 0 },
+      },
+    } 
+  },
+
   -- "gc" to comment visual region/lines
   { 'numToStr/Comment.nvim', opts = {} },
 
@@ -34,6 +47,9 @@ require('lazy').setup({
     },
     build = ":TSUpdate"
   },
+
+  -- Theme
+  { "rebelot/kanagawa.nvim" },
 })
 
 -- Importing all plugins setup
