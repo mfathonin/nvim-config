@@ -52,7 +52,8 @@ vim.o.termguicolors = true
 vim.wo.signcolumn = 'yes'
 vim.o.scrolloff = 8
 
-vim.o.colorcolumn = "80" -- adding column mark on 80 chars
+-- adding column mark on 80 chars
+-- vim.o.colorcolumn = "80" 
 
 -- Decrease update time
 vim.o.updatetime = 250

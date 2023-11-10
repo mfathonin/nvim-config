@@ -22,12 +22,23 @@ vim.keymap.set("i", "jj", "<Esc>")
 local builtin = require('telescope.builtin')
 
 vim.keymap.set('n', '<C-p>', builtin.git_files)
-vim.keymap.set('n', '<leader>gf', builtin.git_files)
+vim.keymap.set('n', '<leader>gf', builtin.git_files, {
+  desc = "[G]it [F]ile tree"
+})
 vim.keymap.set('n', '<leader>wf', builtin.find_files, {
   desc = "[W]orkspace [F]ile"
 })
-vim.keymap.set('n', '<leader>ws', function()
+vim.keymap.set('n', '<leader>ss', function()
   builtin.grep_string({ search = vim.fn.input('Grep > ') });
 end, {
-  desc = '[W]orkspace [S]earch'
+  desc = '[S]earch [S]tring using Grep'
 })
+
+require("which-key").register {
+  ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
+  ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
+  ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
+  -- ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
+  -- ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
+  -- ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
+}
