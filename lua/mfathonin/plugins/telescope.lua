@@ -1,5 +1,5 @@
 require('telescope').setup({
- defaults = {
+  defaults = {
     mappings = {
       i = {
         ['<C-u>'] = false,
@@ -8,3 +8,5 @@ require('telescope').setup({
     },
   },
 })
+
+require("telescope").load_extension("file_browser")

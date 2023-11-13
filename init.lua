@@ -40,6 +40,10 @@ require('lazy').setup({
     -- or                          , branch = '0.1.x',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons" }
+  },
   { 
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
@@ -53,6 +57,7 @@ require('lazy').setup({
 
   -- Theme
   { "rebelot/kanagawa.nvim" },
+  { "nvim-tree/nvim-web-devicons" },
 })
 
 -- Importing all plugins setup

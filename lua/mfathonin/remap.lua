@@ -33,13 +33,13 @@ vim.keymap.set('n', '<C-p>', builtin.git_files)
 vim.keymap.set('n', '<leader>gf', builtin.git_files, {
   desc = "[G]it [F]ile tree"
 })
-vim.keymap.set('n', '<leader>wf', builtin.find_files, {
+vim.keymap.set('n', '<leader>wf', '<Cmd>Telescope file_browser<CR>', {
   desc = "[W]orkspace [F]ile"
 })
-vim.keymap.set('n', '<leader>ss', function()
+vim.keymap.set('n', '<leader>sg', function()
   builtin.grep_string({ search = vim.fn.input('Grep > ') });
 end, {
-  desc = '[S]earch [S]tring using Grep'
+  desc = '[S]earch using [G]rep'
 })
 vim.keymap.set('n', '<leader>/', builtin.buffers, { 
   desc = "File Buffers"
