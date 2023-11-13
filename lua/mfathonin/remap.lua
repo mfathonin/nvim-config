@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<C-b>", '<Cmd>Lex<CR><Cmd>vertical resize 40<CR>')
+vim.keymap.set("n", "<C-b>", '<Cmd>NvimTreeToggle<CR>')
 
 -- Move selected line
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -46,7 +46,7 @@ vim.keymap.set('n', '<leader>/', builtin.buffers, {
 })
 
 -- Git tools by tpope/vim-fugitive
-vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { 
+vim.keymap.set('n', '<leader>gs', '<Cmd>NvimTreeClose<CR><Cmd>vertical G<CR><Cmd>vertical resize 70<CR>', { 
   desc = '[G]it [S]tatus'
 })
 vim.keymap.set('n', '<leader>ga', '<Cmd>Git add -p<CR>', { 

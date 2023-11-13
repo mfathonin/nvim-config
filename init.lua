@@ -55,6 +55,9 @@ require('lazy').setup({
   -- Git tools
   { 'tpope/vim-fugitive' },
 
+  -- Files tree
+  { "nvim-tree/nvim-tree.lua" }, 
+
   -- Theme
   { "rebelot/kanagawa.nvim" },
   { "nvim-tree/nvim-web-devicons" },
