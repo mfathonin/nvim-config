@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<C-b>", vim.cmd.Ex)
+vim.keymap.set("n", "<C-b>", '<Cmd>Lex<CR><Cmd>vertical resize 40<CR>')
 
 -- Move selected line
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
