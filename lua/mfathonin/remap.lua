@@ -27,8 +27,7 @@ vim.keymap.set('n', '<M-l>', '<C-w>l')
 vim.keymap.set('n', '<M-q>', '<Cmd>bp<bar>sp<bar>bn<bar>bd<CR>')
 
 -- [[ Tab navigation ]]
-vim.keymap.set('n', 't', 'gt')
-vim.keymap.set('n', 'T', 'gT')
+vim.keymap.set('n', '<M-t>', 'gt')
 
 -- [[ Telescope key binding ]]
 local builtin = require('telescope.builtin')
