@@ -1,4 +1,6 @@
-vim.keymap.set("n", "<C-b>", '<Cmd>NvimTreeToggle<CR>')
+vim.keymap.set("n", "<leader>wt", '<Cmd>NvimTreeOpen<CR>', {
+  desc = "[W]orkspace File [T]ree",
+})
 
 -- Move selected line
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -36,7 +38,7 @@ vim.keymap.set('n', '<C-p>', builtin.git_files)
 vim.keymap.set('n', '<leader>gf', builtin.git_files, {
   desc = "[G]it [F]ile tree"
 })
-vim.keymap.set('n', '<leader>wf', '<Cmd>Telescope file_browser<CR>', {
+vim.keymap.set('n', '<leader>wf', builtin.find_files, {
   desc = "[W]orkspace [F]ile"
 })
 vim.keymap.set('n', '<leader>sg', function()

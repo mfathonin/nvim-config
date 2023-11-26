@@ -44,7 +44,7 @@ require('lazy').setup({
     "nvim-telescope/telescope-file-browser.nvim",
     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons" }
   },
-  { 
+  {
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
@@ -52,7 +52,6 @@ require('lazy').setup({
     build = ":TSUpdate"
   },
 
-  -- LSP Zero
   {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v3.x',
@@ -84,24 +83,24 @@ require('lazy').setup({
 
       -- And you can configure cmp even more, if you want to.
       local cmp = require('cmp')
+      local cmp_action = lsp_zero.cmp_action()
       local cmp_select = {behavior = cmp.SelectBehavior.Select}
 
       cmp.setup({
-        sources = {
-          {name = 'path'},
-          {name = 'nvim_lsp'},
-          {name = 'nvim_lua'},
-        },
         formatting = lsp_zero.cmp_format(),
         mapping = cmp.mapping.preset.insert({
           ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
           ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
           ['<Tab>'] = cmp.mapping.confirm({ select = true }),
           ['<C-Space>'] = cmp.mapping.complete(),
+          ['<C-f>'] = cmp_action.luasnip_jump_forward(),
+          ['<C-b>'] = cmp_action.luasnip_jump_backward(),
         }),
       })
     end
   },
+
+  -- LSP
   {
     'neovim/nvim-lspconfig',
     cmd = {'LspInfo', 'LspInstall', 'LspStart'},
@@ -135,7 +134,7 @@ require('lazy').setup({
       end)
 
       require('mason-lspconfig').setup({
-        ensure_installed = {'tsserver', 'rust_analyzer'},
+        ensure_installed = {'tsserver', 'lua_ls'},
         handlers = {
           lsp_zero.default_setup,
           lua_ls = function()
@@ -152,7 +151,7 @@ require('lazy').setup({
   { 'tpope/vim-fugitive' },
 
   -- Files tree
-  { "nvim-tree/nvim-tree.lua" }, 
+  { "nvim-tree/nvim-tree.lua" },
 
   -- Theme
   { "rebelot/kanagawa.nvim" },
