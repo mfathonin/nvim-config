@@ -147,6 +147,9 @@ require('lazy').setup({
     end
   },
 
+  -- Toggle term inside nvim
+  {'akinsho/toggleterm.nvim', version = "*", config = true},
+
   -- Git tools
   { 'tpope/vim-fugitive' },
 
