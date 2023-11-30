@@ -1,6 +1,6 @@
 require("toggleterm").setup{
   open_mapping = [[<C-\>]],
-  shell = 'powershell',
+  shell = 'pwsh',
   size = 20,
 }
 
