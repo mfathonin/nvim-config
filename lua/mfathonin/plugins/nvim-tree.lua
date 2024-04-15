@@ -17,7 +17,7 @@ local function open_tab(node)
   vim.cmd.tabprev()
   vim.cmd('NvimTreeClose')
   vim.cmd.tabnext()
-  
+
 end
 
 -- Custom keymap
@@ -54,6 +54,11 @@ require("nvim-tree").setup({
     root_folder_label = false,
   },
   filters = {
-    dotfiles = true,
+    dotfiles = false,
+    git_ignored = false,
+    git_clean = false,
+    custom = {
+      "node_modules",
+    },
   },
 })
