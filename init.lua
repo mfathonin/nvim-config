@@ -32,11 +32,12 @@ require('lazy').setup({
   },
 
   -- "gc" to comment visual region/lines
-  { 'numToStr/Comment.nvim', opts = {} },
+  { 'numToStr/Comment.nvim',      opts = {} },
 
-  -- Add telescope.nvim 
+  -- Add telescope.nvim
   {
-    'nvim-telescope/telescope.nvim', tag = '0.1.4',
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.4',
     -- or                          , branch = '0.1.x',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
@@ -74,7 +75,7 @@ require('lazy').setup({
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
     dependencies = {
-      {'L3MON4D3/LuaSnip'},
+      { 'L3MON4D3/LuaSnip' },
     },
     config = function()
       -- Here is where you configure the autocompletion settings.
@@ -84,7 +85,7 @@ require('lazy').setup({
       -- And you can configure cmp even more, if you want to.
       local cmp = require('cmp')
       local cmp_action = lsp_zero.cmp_action()
-      local cmp_select = {behavior = cmp.SelectBehavior.Select}
+      local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
       cmp.setup({
         formatting = lsp_zero.cmp_format(),
@@ -92,6 +93,7 @@ require('lazy').setup({
           ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
           ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
           ['<Tab>'] = cmp.mapping.confirm({ select = true }),
+          ['<Enter>'] = cmp.mapping.confirm({ select = true }),
           ['<C-Space>'] = cmp.mapping.complete(),
           ['<C-f>'] = cmp_action.luasnip_jump_forward(),
           ['<C-b>'] = cmp_action.luasnip_jump_backward(),
@@ -103,11 +105,11 @@ require('lazy').setup({
   -- LSP
   {
     'neovim/nvim-lspconfig',
-    cmd = {'LspInfo', 'LspInstall', 'LspStart'},
-    event = {'BufReadPre', 'BufNewFile'},
+    cmd = { 'LspInfo', 'LspInstall', 'LspStart' },
+    event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
-      {'hrsh7th/cmp-nvim-lsp'},
-      {'williamboman/mason-lspconfig.nvim'},
+      { 'hrsh7th/cmp-nvim-lsp' },
+      { 'williamboman/mason-lspconfig.nvim' },
     },
     config = function()
       -- This is where all the LSP shenanigans will live
@@ -117,9 +119,9 @@ require('lazy').setup({
       lsp_zero.on_attach(function(client, bufnr)
         -- see :help lsp-zero-keybindings
         -- to learn the available actions
-        lsp_zero.default_keymaps({buffer = bufnr})
+        lsp_zero.default_keymaps({ buffer = bufnr })
 
-        local opts = {buffer = bufnr, remap = false}
+        local opts = { buffer = bufnr, remap = false }
 
         vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
         vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
@@ -130,11 +132,12 @@ require('lazy').setup({
         vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
         vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
         vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
+        vim.keymap.set("n", "<F2>", function() vim.lsp.buf.rename() end, opts)
         vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
       end)
 
       require('mason-lspconfig').setup({
-        ensure_installed = {'tsserver', 'lua_ls'},
+        ensure_installed = { 'tsserver', 'lua_ls' },
         handlers = {
           lsp_zero.default_setup,
           lua_ls = function()
