@@ -1,7 +1,3 @@
--- Set relative number
-vim.o.number = true
-vim.o.relativenumber = true
-
 -- Disabled highlight on search
 vim.o.hlsearch = false
 -- vim.o.incseach = true
@@ -25,12 +21,6 @@ vim.o.breakindent = true
 -- Disabled wrapping
 vim.o.wrap = false
 
--- Enable Colors
-vim.o.termguicolors = true
-
--- Set scroll offset
-vim.o.scrolloff = 8
-
 -- Save undo history
 vim.o.undofile = true
 
@@ -42,18 +32,12 @@ vim.o.smartcase = true
 vim.o.updatetime = 350
 vim.o.timeoutlen = 450
 
--- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menuone,noselect'
-
--- NOTE: You should make sure your terminal supports this
-vim.o.termguicolors = true
-
 -- Keep signcolumn on by default
 vim.wo.signcolumn = 'yes'
 vim.o.scrolloff = 8
 
 -- adding column mark on 80 chars
--- vim.o.colorcolumn = "80" 
+vim.o.colorcolumn = "80"
 
 -- Decrease update time
 vim.o.updatetime = 250
@@ -64,3 +48,7 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
+
+-- Set relative number
+vim.o.number = true
+vim.o.relativenumber = true
